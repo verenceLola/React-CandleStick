@@ -7,6 +7,9 @@ name = "pypi"
 starlette = "*"
 uvicorn = "*"
 databases = {extras = ["postgresql"], version = "*"}
+sqlalchemy = "*"
+alembic = "*"
+psycopg2 = "*"
 
 [dev-packages]
 black = "*"
