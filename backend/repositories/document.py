@@ -9,8 +9,14 @@ class DocumentRepository:
 
     def __init__(self):
         self._database = Database
+        self._table = Document.__table__
 
     async def get_all_async(self):
-        query = Document.__table__.select()
+        query = self._table.select()
 
         return self._database.iterate(query)
+
+    async def add(self, value):
+        query = self._table.insert()
+
+        return await self._database.execute(query, values=value)

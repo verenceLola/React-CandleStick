@@ -19,7 +19,16 @@ class Documents(HTTPEndpoint):
             {
                 "title": document["title"],
                 "position": document["position"],
+                "type": document["type"],
+                "id": document["id"],
             }
             async for document in result
         ]
         return JSONResponse(docs)
+
+    async def post(self, request):
+        data = await request.json()
+
+        result = await self.repository.add(data)
+
+        return JSONResponse(data)
