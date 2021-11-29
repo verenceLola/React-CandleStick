@@ -19,6 +19,7 @@ class Documents(HTTPEndpoint):
             {
                 "title": document["title"],
                 "position": document["position"],
+                "type": document["type"],
             }
             async for document in result
         ]
