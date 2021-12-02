@@ -16,7 +16,7 @@ class DocumentRepository:
 
         return self._database.iterate(query)
 
-    async def add(self, value):
+    async def add_async(self, value):
         query = self._table.insert()
 
         return await self._database.execute(query, values=value)

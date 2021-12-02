@@ -29,6 +29,6 @@ class Documents(HTTPEndpoint):
     async def post(self, request):
         data = await request.json()
 
-        result = await self.repository.add(data)
+        result = await self.repository.add_async(data)
 
         return JSONResponse(data)
